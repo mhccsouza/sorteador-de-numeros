@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --content-primary: #FFFFFF;
+    --content-secondary: #c7c9cc;
+    --content-tertiary: #d9d9d9;
+    --content-brand: #c58de7;
+    --color-reverse: #030203;
+
+    --background-primary: #020202;
+    --background-secondary: #111012;
+    --background-tertiary: #24222E;
+    --background-brand: #c58de7;
+    --background-gray: #3d3d3d;
+
+    --accent-pink: #d586e0;
+    --accent-blue: #91a1fa;
+    --accent-green: #77c0af;
+    --accent-lime: #d1dc97;
+    --accent-red: #e9a9b3;
+
+    --gradient-border: linear-gradient(91.26deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
+    --gradient-background: linear-gradient(91.26deg, #D586E0 0%, #91A1FA 98.93%);
+    --gradient-content: linear-gradient(90deg, #C7C9CC 0%, #3D3D3D 100%);
+
+    --ff-sora: "Sora", sans-serif;
+    --ff-robotoMono: "Roboto Mono", monospace;
+    --ff-robotoFlex: "Roboto Flex", sans-serif;
+
+    --fs-base: 1rem;
+    --fs-display-l: 4.5rem;
+    --fs-display-m: 2.5rem;
+    --fs-display-s: 2rem;
+    --fs-p-m: .875rem;
+    --fs-p-s: .75rem;
+    --fs-label-m: 1.25rem;
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semiBold: 600;
+    --fw-bold: 700;
+    --fw-extraBold: 800;
+}
