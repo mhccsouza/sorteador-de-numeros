@@ -34,6 +34,7 @@
     --ff-sora: "Sora", sans-serif;
     --ff-robotoMono: "Roboto Mono", monospace;
     --ff-robotoFlex: "Roboto Flex", sans-serif;
+    --ff-inter: "Inter", sans-serif;
 
     --fs-base: 1rem;
     --fs-display-l: 4.5rem;
@@ -61,7 +62,7 @@ body {
 }
 
 .container {
-    --max-width: 20rem;
+    --max-width: 19.9375rem;
     --padding-block: 2.75rem;
     width: var(--max-width);
     margin-inline: auto;
@@ -95,13 +96,162 @@ body {
         & .section-title {
             grid-area: title;
             align-self: start;
+
+            & p {
+                background: var(--gradient-content);
+                -webkit-background-clip: text;
+                background-clip: text;
+                font: var(--fw-bold) var(--fs-base)/1.5 var(--ff-robotoMono);
+                text-transform: uppercase;
+                color: transparent;
+            }
+
+            & h1 {
+                font: var(--fw-extraBold) var(--fs-display-m)/1.3 var(--ff-sora);
+                letter-spacing: -0.04em;
+                text-transform: uppercase;
+                margin-top: .5rem;
+            }
+        }
+        & .section-raffle {
+            grid-area: raffle;
+            margin-top: 2.625rem;
+
+            & h2 {
+                font: var(--fw-bold) var(--fs-label-m)/1.5 var(--ff-robotoFlex);
+                text-transform: uppercase;
+            }
+
+            & p {
+                font: var(--fw-medium) var(--fs-p-s)/1.5 var(--ff-robotoFlex);
+                color: var(--content-secondary);
+            }
+
+            & form {
+               & fieldset {
+                border: none;
+                display: flex;
+                gap: .75rem;
+                margin-top: 2.5rem;
+
+                & .input {
+                    text-align: center;
+                    width: 5.375rem;
+
+                    & label {
+                        text-transform: uppercase;
+                        font: var(--fw-bold) var(--fs-base)/1.5 var(--ff-robotoFlex);
+                        color: var(--content-secondary);
+                    }
+
+                    & input {
+                        margin-top: .5rem;
+                        width: 100%;
+                        height: 3.5rem;
+                        background: var(--background-secondary);
+                        border: 1px solid var(--background-secondary);
+                        border-radius: .5rem;
+                        text-align: center;
+                        padding: .25rem .5rem;
+
+                        font: var(--fw-bold) var(--fs-display-s)/1.5 var(--ff-sora);
+                        color: var(--content-primary);
+                    }
+                }
+               }
+
+               & .input-checkbox {
+                margin-top: 1.25rem;
+                display: flex;
+                gap: .5rem;
+                align-items: center;
+                position: relative;
+
+                & .checkbox {
+                    width: 1.875rem;
+                    height: 1.25rem;
+                    border-radius: 1rem;
+                    background: var(--gradient-background);
+                    position: relative;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: .875rem;
+                        height: .875rem;
+                        background: var(--content-primary);
+                        box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+                        border-radius: 50%;
+                        left: 3px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        transition: left 500ms linear;
+                    }
+                    & input[type="checkbox"] {
+                        all: unset;
+                        position: absolute;
+                        inset: 0;
+                    }
+                }
+                &:has(input:checked) {
+                    & .checkbox {
+                        &::before {
+                            left: 13px;
+                        }
+                    }
+                }
+
+                & label {
+                    font: var(--fw-regular) var(--fs-p-s)/1.5 var(--ff-inter);
+                }
+               }
+
+               & button {
+                margin-top: 2.5rem;
+                width: 100%;
+                height: 3.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+
+                background: var(--background-tertiary);
+                cursor: pointer;
+                border-radius: .5rem;
+                border: none;
+                
+                text-transform: uppercase;
+                font: var(--fw-bold) var(--fs-base)/1.5 var(--ff-robotoFlex);
+                color: var(--content-primary);
+               }
+            }
         }
         & .section-faq {
             grid-area: faq;
             align-self: start;
-        }
-        & .section-raffle {
-            grid-area: raffle;
+            margin-top: 5rem;
+            display: grid;
+            gap: 2.25rem;
+            
+            & article {
+                width: 100%;
+                display: flex;
+                align-items: start;
+                gap: .5rem;
+
+                & .content {
+                    & h3 {
+                        font: var(--fw-medium) var(--fs-p-m)/1.5 var(--ff-robotoFlex);
+                        color: var(--content-brand);
+                    }
+
+                    & p {
+                        font: var(--fw-medium) var(--fs-p-s)/1.5 var(--ff-robotoFlex);
+                        color: var(--content-secondary);
+                    }
+                }
+            }
         }
 
     }
@@ -127,8 +277,20 @@ body {
             column-gap: 6.75rem;
             align-items: start;
 
+            & .section-title {
+                & h1 {
+                    font-size: 4.5rem;
+                    margin-top: .75rem;
+                }
+            }
+
             & .section-raffle {
                 align-self: center;
+                margin-top: 0;
+            }
+
+            & .section-faq {
+                margin-top: 2.375rem;
             }
         }
     }
