@@ -82,15 +82,54 @@ body {
             color: var(--content-primary);
         }
     }
+
+    & .sections {
+        margin-top: 2.875rem;
+        display: grid;
+        grid-template-areas:
+        "title"
+        "raffle"
+        "faq"
+        ;
+
+        & .section-title {
+            grid-area: title;
+            align-self: start;
+        }
+        & .section-faq {
+            grid-area: faq;
+            align-self: start;
+        }
+        & .section-raffle {
+            grid-area: raffle;
+        }
+
+    }
 }
 
 @media (width >= 68.625em) {
     .container {
-        --max-width: 68.625em;
+        --max-width: 68.625rem;
         --padding-block: 4.75rem 9.5625rem;
 
         & .logomarca {
            --justify-content: flex-start;
+        }
+
+        & .sections {
+            margin-top: 5.5625rem;
+            grid-template-areas:
+            "title raffle"
+            "faq raffle"
+            ;
+            grid-template-columns: 1fr 30.125rem;
+            grid-template-rows: auto 1fr;
+            column-gap: 6.75rem;
+            align-items: start;
+
+            & .section-raffle {
+                align-self: center;
+            }
         }
     }
 }
