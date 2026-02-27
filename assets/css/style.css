@@ -293,12 +293,42 @@ body {
                         transition: background 0.3s;
                     }
 
+                    & img {
+                        transition: transform 0.3s ease;
+                    }
+
                     &:hover {
                         &::before {
                             opacity: 1; /* Liga o marquee */
                         }
                         &::after {
                             background: var(--background-secondary);
+                        }
+
+                        & img {
+                            transform: translateX(5px);
+                        }
+                    }
+                        
+                    }
+                }
+
+                .wrapper.last {
+                    & h2, & p {
+                        text-align: center;
+                    }
+
+                    & form {
+                        & button {
+                            & img {
+                                transition: transform 1s ease-in-out;
+                            }
+
+                            &:hover {
+                                & img {
+                                    transform: rotate(360deg);
+                                }
+                            }
                         }
                     }
                 }
@@ -332,10 +362,19 @@ body {
         }
 
     }
+
+.hidden {
+    display: none;
+}
+
+@keyframes rotateImg {
+    100% {
+        transform: rotateX('360g');
+    }
 }
 @keyframes border-infinito {
     0% {
-        background-position: 0% 50%
+        background-position: 0% 50%;
     }
     100% {
         background-position: 100% 50%;
