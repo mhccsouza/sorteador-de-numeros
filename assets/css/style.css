@@ -322,7 +322,7 @@ body {
                         justify-content: center;
                         margin-block: 2.5rem;
                         flex-wrap: wrap;
-                        gap: .25rem;
+                        gap: 1rem;
 
                         & .result-number {
                             width: 5.25rem;

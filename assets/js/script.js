@@ -64,7 +64,7 @@ function showResults(results) {
     wrapperFirst.classList.add("hidden")
     wrapperLast.classList.remove("hidden")
 
-    // 3. Cria cada número com um delay para o efeito de suspense
+    // Cria cada número com um delay para o efeito de suspense
     results.forEach((number, index) => {
         console.log(index, number)
         const numberElement = document.createElement("div")
