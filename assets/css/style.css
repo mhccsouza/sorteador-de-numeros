@@ -270,7 +270,6 @@ body {
                         position: absolute;
                         inset: -2px;
                         z-index: -2;
-                        /* O segredo: o tamanho tem que estar aqui e não ser sobrescrito */
                         background-size: 200% 100%; 
                         background-image: linear-gradient(
                             90deg,
@@ -278,7 +277,6 @@ body {
                             #77C0AF, #D1DC97, #E9A9B3, #D586E0, #91A1FA
                         );
                         animation: border-infinito 2s infinite linear;
-                        /* Deixamos invisível por padrão e mostramos no hover */
                         opacity: 0;
                         transition: opacity 0.3s;
                     }
@@ -316,6 +314,33 @@ body {
                 .wrapper.last {
                     & h2, & p {
                         text-align: center;
+                    }
+
+                    & .result-container {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        margin-block: 2.5rem;
+                        flex-wrap: wrap;
+                        gap: .25rem;
+
+                        & .result-number {
+                            width: 5.25rem;
+                            height: 5.25rem;
+                            background: var(--content-brand);
+                            border-radius: 1.75rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            opacity: 0;
+                            animation: revealNumber 4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+
+                            & span {
+                                font: var(--fw-bold) 3rem/1.5 var(--ff-robotoMono);
+                                color: var(--content-brand);
+                            }
+                        }
                     }
 
                     & form {
@@ -366,12 +391,30 @@ body {
 .hidden {
     display: none;
 }
+@keyframes revealNumber {
+    0% {
+        opacity: 0;
+        transform: scale(3) rotate(-360deg); /* Começa grande e rotacionado */
+        background: var(--background-brand);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg); /* Chega no tamanho normal */
+        background: var(--background-brand);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        background: transparent; /* O fundo some no final para revelar apenas o número */
+    }
+}
 
 @keyframes rotateImg {
     100% {
         transform: rotateX('360g');
     }
 }
+
 @keyframes border-infinito {
     0% {
         background-position: 0% 50%;

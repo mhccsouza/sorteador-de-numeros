@@ -31,19 +31,19 @@
                             <div class="input">
                                 <label for="number-quantity">Números</label>
                                 <div class="input-wrapper">
-                                    <input type="text" name="number-quantity" id="number-quantity">
+                                    <input type="text" name="number-quantity" id="number-quantity" required>
                                 </div>
                             </div>
                             <div class="input">
                                 <label for="number-initil">De</label>
                                 <div class="input-wrapper">
-                                    <input type="text" name="number-initil" id="number-initil">
+                                    <input type="text" name="number-initil" id="number-initil" required>
                                 </div>
                             </div>
                             <div class="input">
-                                <label for="number-end">De</label>
+                                <label for="number-end">Até</label>
                                 <div class="input-wrapper">
-                                    <input type="text" name="number-end" id="number-end">
+                                    <input type="text" name="number-end" id="number-end" required>
                                 </div>
                             </div>
                         </fieldset>
@@ -60,8 +60,13 @@
                     <h2>Resultado do sorteio</h2>
                     <p>1º resultado</p>
 
+                    <div class="result-container">
+                        <!-- <div class="result-number"><span>23</span></div>
+                        <div class="result-number"><span>23</span></div>
+                        <div class="result-number"><span>23</span></div> -->
+                    </div>
                     <form>
-                        <button id="reset">Sortear novamente <img src="assets/images/360.svg" alt="360"></button>
+                        <button id="reset" type="button">Sortear novamente <img src="assets/images/360.svg" alt="360"></button>
                     </form>
                 </div>
             </section>
