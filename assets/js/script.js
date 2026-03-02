@@ -67,6 +67,11 @@ function showResults(results) {
     const oldForm = wrapperLast.querySelector("form");
     if (oldForm) oldForm.remove();
 
+    const statusText = document.querySelector(".wrapper.last p")
+    if(statusText) {
+        statusText.textContent = results.length > 1 ? "Resultado final" : "1° sorteio"
+    }
+
     // Cria cada número com um delay para o efeito de suspense
     results.forEach((number, index) => {
         console.log(index, number)
