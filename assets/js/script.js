@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
         const min = Number(inputInitil.value)
         const max = Number (inputEnd.value)
 
-        if(!inputQuantity.value && !inputInitil && !inputEnd) {
+        if(!inputQuantity.value || !inputInitil.value || !inputEnd.value) {
             throw new Error("Por favor, preencha todos os campos antes de sortear")
         }
 
@@ -58,10 +58,14 @@ form.addEventListener("submit", (e) => {
 })
 
 function showResults(results) {
+    
     resultContainer.innerHTML = ""
 
     wrapperFirst.classList.add("hidden")
     wrapperLast.classList.remove("hidden")
+    
+    const oldForm = wrapperLast.querySelector("form");
+    if (oldForm) oldForm.remove();
 
     // Cria cada número com um delay para o efeito de suspense
     results.forEach((number, index) => {
@@ -73,7 +77,7 @@ function showResults(results) {
         numberElement.append(numberSpan)
         
         // Aplica o atraso baseado na posição do número (1s entre cada um)
-        numberElement.style.animationDelay = `${index * 1}s`;
+        numberElement.style.animationDelay = `${index * 0.8}s`;
         resultContainer.appendChild(numberElement)
     })
     const newRaffleCamp = document.createElement("form")
@@ -81,7 +85,7 @@ function showResults(results) {
     newRaffle.setAttribute("id", "reset")
     newRaffle.setAttribute("type", "button")
     newRaffle.innerHTML = `Sortear novamente <img src="assets/images/360.svg" alt="360"></button>`
-    newRaffle.style.animationDelay = `${results.length * 1 + 1}s`
+    newRaffle.style.animationDelay = `${(results.length * 0.8) + 0.5}s`
     newRaffleCamp.append(newRaffle)
     wrapperLast.appendChild(newRaffleCamp)
 

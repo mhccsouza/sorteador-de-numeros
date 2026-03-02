@@ -431,12 +431,6 @@ body {
     }
 }
 
-@keyframes rotateImg {
-    100% {
-        transform: rotateX('360g');
-    }
-}
-
 @keyframes border-infinito {
     0% {
         background-position: 0% 50%;
