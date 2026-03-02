@@ -3,7 +3,6 @@ const inputQuantity = document.querySelector("#number-quantity")
 const inputInitil = document.querySelector("#number-initil")
 const inputEnd = document.querySelector("#number-end")
 const checkbox = document.querySelector("#check")
-const reset = document.querySelector("#reset")
 const resultContainer = document.querySelector(".result-container")
 
 const wrapperFirst = document.querySelector(".wrapper.first")
@@ -11,7 +10,7 @@ const wrapperLast = document.querySelector(".wrapper.last")
 
 const hasCharactersRegex = /\D+/g
 const inputCampos = [inputQuantity, inputInitil, inputEnd]
-inputCampos.forEach(input => {
+inputCampos.forEach((input) => {
     input.addEventListener("input", () => {
         input.value = input.value.replace(hasCharactersRegex, "")
     })
@@ -75,14 +74,23 @@ function showResults(results) {
         
         // Aplica o atraso baseado na posição do número (1s entre cada um)
         numberElement.style.animationDelay = `${index * 1}s`;
-        
         resultContainer.appendChild(numberElement)
+    })
+    const newRaffleCamp = document.createElement("form")
+    const newRaffle = document.createElement("button")
+    newRaffle.setAttribute("id", "reset")
+    newRaffle.setAttribute("type", "button")
+    newRaffle.innerHTML = `Sortear novamente <img src="assets/images/360.svg" alt="360"></button>`
+    newRaffle.style.animationDelay = `${results.length * 1 + 1}s`
+    newRaffleCamp.append(newRaffle)
+    wrapperLast.appendChild(newRaffleCamp)
+
+    newRaffle.addEventListener("click", (e) => {
+        e.preventDefault()
+        wrapperFirst.classList.remove("hidden")
+        wrapperLast.classList.add("hidden")
+        form.reset()
     })
 }
 
-reset.addEventListener("click", (e) => {
-    e.preventDefault()
-    wrapperFirst.classList.remove("hidden")
-    wrapperLast.classList.add("hidden")
-    form.reset()
-})
+

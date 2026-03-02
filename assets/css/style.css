@@ -345,6 +345,8 @@ body {
 
                     & form {
                         & button {
+                            opacity: 0;
+                            animation: opacityIn 2s forwards;
                             & img {
                                 transition: transform 1s ease-in-out;
                             }
@@ -390,6 +392,26 @@ body {
 
 .hidden {
     display: none;
+}
+@keyframes opacityIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+        animation-timing-function: ease-in-out;
+    }
+    90% {
+        opacity: 0.75;
+        animation-timing-function: ease-in;
+    }
+    95% {
+        opacity: 0.95;
+        animation-timing-function: ease-out;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 @keyframes revealNumber {
     0% {
